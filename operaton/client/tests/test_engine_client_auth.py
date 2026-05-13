@@ -205,14 +205,14 @@ class EngineClientAuthTest(TestCase):
         process_instance_var_url = \
             f"{ENGINE_LOCAL_BASE_URL}/process-instance/{process_instance_id}/variables/{variable_name}"
         resp_frame_payload = {"value": None, "valueInfo": {}, "type": ""}
-        resp_data_payload = base64.decodebytes(b"hellooperaton")
+        resp_data_payload = base64.decodebytes(b"operaton")
         process_instance_var_data_url = f"{process_instance_var_url}/data"
 
         responses.add(responses.GET, process_instance_var_url, status=HTTPStatus.OK, json=resp_frame_payload)
         responses.add(responses.GET, process_instance_var_data_url, status=HTTPStatus.OK, body=resp_data_payload)
 
         resp = self.client.get_process_instance_variable(process_instance_id, variable_name)
-        self.assertEqual("hellooperaton\n", resp)
+        self.assertEqual("operaton\n", resp)
 
     @responses.activate
     def test_auth_basic_get_process_instance_variable_with_meta(self):
@@ -221,11 +221,11 @@ class EngineClientAuthTest(TestCase):
         process_instance_var_url = \
             f"{ENGINE_LOCAL_BASE_URL}/process-instance/{process_instance_id}/variables/{variable_name}"
         resp_frame_payload = {"value": None, "valueInfo": {}, "type": ""}
-        resp_data_payload = base64.decodebytes(b"hellooperaton")
+        resp_data_payload = base64.decodebytes(b"operaton")
         process_instance_var_data_url = f"{process_instance_var_url}/data"
 
         responses.add(responses.GET, process_instance_var_url, status=HTTPStatus.OK, json=resp_frame_payload)
         responses.add(responses.GET, process_instance_var_data_url, status=HTTPStatus.OK, body=resp_data_payload)
 
         resp = self.client.get_process_instance_variable(process_instance_id, variable_name, True)
-        self.assertEqual({"value": "hellooperaton\n", "valueInfo": {}, "type": ""}, resp)
+        self.assertEqual({"value": "operaton\n", "valueInfo": {}, "type": ""}, resp)

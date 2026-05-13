@@ -1,4 +1,4 @@
-name: camunda-external-task-client-python3
+name: operaton-external-task-client-python3
 
 on: [push, pull_request]
 
@@ -43,4 +43,4 @@ jobs:
       run: |
         pip install pytest
         pip install pytest-cov
-        pytest --junitxml=junit/test-results.xml --cov=camunda --cov-report=xml --cov-report=html --verbose
+        pytest --junitxml=junit/test-results.xml --cov=operaton --cov-report=xml --cov-report=html --verbose

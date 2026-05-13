@@ -3,8 +3,8 @@ from random import randint
 
 import time
 
-from camunda.external_task.external_task import ExternalTask
-from camunda.utils.log_utils import log_with_context
+from operaton.external_task.external_task import ExternalTask
+from operaton.utils.log_utils import log_with_context
 
 
 def handle_task(task: ExternalTask):

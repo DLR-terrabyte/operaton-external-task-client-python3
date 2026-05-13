@@ -1,0 +1,1899 @@
+{
+  "info": {
+    "_postman_id": "86655f7d-7b12-48f4-a263-04edebeb442a",
+    "name": "Operaton REST APIs",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "30017905"
+  },
+  "item": [
+    {
+      "name": "Process Definition",
+      "item": [
+        {
+          "name": "Start Instance with Tenant ID",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"businessKey\": \"9a1d2475-eabe-4a5a-91c4-c123ddea15ec\",\n    \"withVariablesInReturn\": true,\n    \"variables\": {\n        \"applicationId\": {\n            \"value\": \"9a1d2475-eabe-4a5a-91c4-c123ddea15ec\",\n            \"type\": \"String\"\n        }\n    }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{operaton}}/process-definition/key/DIGITAL_FIRST_CARD_ORIGINATION/tenant-id/{{tenant_id}}/start",
+              "host": [
+                "{{operaton}}"
+              ],
+              "path": [
+                "process-definition",
+                "key",
+                "DIGITAL_FIRST_CARD_ORIGINATION",
+                "tenant-id",
+                "{{tenant_id}}",
+                "start"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Start Instance - DIGITAL_CARD_ORIGINATION Response",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{local}}/process-definition/key/{{key}}/start",
+                  "host": [
+                    "{{local}}"
+                  ],
+                  "path": [
+                    "process-definition",
+                    "key",
+                    "{{key}}",
+                    "start"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked"
+                },
+                {
+                  "key": "Date",
+                  "value": "Wed, 06 May 2020 14:07:53 GMT"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=20"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"links\": [\n        {\n            \"method\": \"GET\",\n            \"href\": \"http://localhost:8080/engine-rest/process-instance/fa512fed-8fa2-11ea-8743-0242ac110002\",\n            \"rel\": \"self\"\n        }\n    ],\n    \"id\": \"fa512fed-8fa2-11ea-8743-0242ac110002\",\n    \"definitionId\": \"DIGITAL_CARD_ORIGINATION:2:b32d2bae-8fa1-11ea-8743-0242ac110002\",\n    \"businessKey\": null,\n    \"caseInstanceId\": null,\n    \"ended\": false,\n    \"suspended\": false,\n    \"tenantId\": null\n}"
+            }
+          ]
+        },
+        {
+          "name": "Start Instance with Tenant ID - Experiments",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"businessKey\": \"2\",\n  \"withVariablesInReturn\": true,\n  \"variables\": {\n    \"escalateAtTaskId\" : {\n        \"value\" : \"STEP_2\",\n        \"type\": \"String\"\n    },\n    \"escalationCode\": {\n        \"value\" : \"MANUAL_REVIEW\",\n        \"type\": \"String\"\n    }\n  }\n}\n",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{local}}/process-definition/key/SET_JOB_CONFIG_EXAMPLE/tenant-id/{{tenant_id}}/start",
+              "host": [
+                "{{local}}"
+              ],
+              "path": [
+                "process-definition",
+                "key",
+                "SET_JOB_CONFIG_EXAMPLE",
+                "tenant-id",
+                "{{tenant_id}}",
+                "start"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Start Instance - DIGITAL_CARD_ORIGINATION Response",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{local}}/process-definition/key/{{key}}/start",
+                  "host": [
+                    "{{local}}"
+                  ],
+                  "path": [
+                    "process-definition",
+                    "key",
+                    "{{key}}",
+                    "start"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked"
+                },
+                {
+                  "key": "Date",
+                  "value": "Wed, 06 May 2020 14:07:53 GMT"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=20"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"links\": [\n        {\n            \"method\": \"GET\",\n            \"href\": \"http://localhost:8080/engine-rest/process-instance/fa512fed-8fa2-11ea-8743-0242ac110002\",\n            \"rel\": \"self\"\n        }\n    ],\n    \"id\": \"fa512fed-8fa2-11ea-8743-0242ac110002\",\n    \"definitionId\": \"DIGITAL_CARD_ORIGINATION:2:b32d2bae-8fa1-11ea-8743-0242ac110002\",\n    \"businessKey\": null,\n    \"caseInstanceId\": null,\n    \"ended\": false,\n    \"suspended\": false,\n    \"tenantId\": null\n}"
+            }
+          ]
+        },
+        {
+          "name": "Start Instance without Tenant ID",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"withVariablesInReturn\": true,\n    \"businessKey\": \"1\",\n    \"variables\": {\n        \"result\" : {\n            \"value\" : \"REVIEW\",\n            \"type\": \"String\"\n        }\n    }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{operaton}}/process-definition/key/MESSAGE_EXAMPLE/start",
+              "host": [
+                "{{operaton}}"
+              ],
+              "path": [
+                "process-definition",
+                "key",
+                "MESSAGE_EXAMPLE",
+                "start"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Start Instance - DIGITAL_CARD_ORIGINATION Response",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{local}}/process-definition/key/{{key}}/start",
+                  "host": [
+                    "{{local}}"
+                  ],
+                  "path": [
+                    "process-definition",
+                    "key",
+                    "{{key}}",
+                    "start"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked"
+                },
+                {
+                  "key": "Date",
+                  "value": "Wed, 06 May 2020 14:07:53 GMT"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=20"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"links\": [\n        {\n            \"method\": \"GET\",\n            \"href\": \"http://localhost:8080/engine-rest/process-instance/fa512fed-8fa2-11ea-8743-0242ac110002\",\n            \"rel\": \"self\"\n        }\n    ],\n    \"id\": \"fa512fed-8fa2-11ea-8743-0242ac110002\",\n    \"definitionId\": \"DIGITAL_CARD_ORIGINATION:2:b32d2bae-8fa1-11ea-8743-0242ac110002\",\n    \"businessKey\": null,\n    \"caseInstanceId\": null,\n    \"ended\": false,\n    \"suspended\": false,\n    \"tenantId\": null\n}"
+            }
+          ]
+        },
+        {
+          "name": "Start Instance with Process Definition ID",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"withVariablesInReturn\": true,\n    \"businessKey\": \"30ea7b40-283b-4526-8979-371f4ffc9ee0\",\n    \"variables\": {\n        \"applicationId\" : {\n            \"value\" : \"30ea7b40-283b-4526-8979-371f4ffc9ee0\",\n            \"type\": \"String\"\n        }\n    }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{operaton}}/process-definition/:process_definition_id/start",
+              "host": [
+                "{{operaton}}"
+              ],
+              "path": [
+                "process-definition",
+                ":process_definition_id",
+                "start"
+              ],
+              "variable": [
+                {
+                  "key": "process_definition_id",
+                  "value": "89337817-75c9-11eb-84bb-0a58a9feac2a"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Start Instance - DIGITAL_CARD_ORIGINATION Response",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"businessKey\": \"1\",\n    \"variables\": {\n        \"applicationId\": {\n            \"value\": 1\n        }\n    }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{operaton}}/process-definition/:process_definition_id/start",
+                  "host": [
+                    "{{operaton}}"
+                  ],
+                  "path": [
+                    "process-definition",
+                    ":process_definition_id",
+                    "start"
+                  ],
+                  "variable": [
+                    {
+                      "key": "process_definition_id",
+                      "value": "89337817-75c9-11eb-84bb-0a58a9feac2a"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked"
+                },
+                {
+                  "key": "Date",
+                  "value": "Wed, 06 May 2020 14:07:53 GMT"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=20"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"links\": [\n        {\n            \"method\": \"GET\",\n            \"href\": \"http://localhost:8080/engine-rest/process-instance/fa512fed-8fa2-11ea-8743-0242ac110002\",\n            \"rel\": \"self\"\n        }\n    ],\n    \"id\": \"fa512fed-8fa2-11ea-8743-0242ac110002\",\n    \"definitionId\": \"DIGITAL_CARD_ORIGINATION:2:b32d2bae-8fa1-11ea-8743-0242ac110002\",\n    \"businessKey\": null,\n    \"caseInstanceId\": null,\n    \"ended\": false,\n    \"suspended\": false,\n    \"tenantId\": null\n}"
+            }
+          ]
+        },
+        {
+          "name": "statistics",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{local}}/process-definition/key/{{key}}/statistics",
+              "host": [
+                "{{local}}"
+              ],
+              "path": [
+                "process-definition",
+                "key",
+                "{{key}}",
+                "statistics"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Instance Statistics",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{local}}/process-definition/statistics",
+              "host": [
+                "{{local}}"
+              ],
+              "path": [
+                "process-definition",
+                "statistics"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "DELETE /process-definition/key",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{local}}/process-definition/key/ESCALATION_HANDLER/delete?cascade=true",
+              "host": [
+                "{{local}}"
+              ],
+              "path": [
+                "process-definition",
+                "key",
+                "ESCALATION_HANDLER",
+                "delete"
+              ],
+              "query": [
+                {
+                  "key": "cascade",
+                  "value": "true"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Definitions List",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{operaton}}/process-definition?key=DIGITAL_FIRST_CARD_ORIGINATION&tenantIds=2fb74cfc-5f4b-4666-80af-3aa47e954721",
+              "host": [
+                "{{operaton}}"
+              ],
+              "path": [
+                "process-definition"
+              ],
+              "query": [
+                {
+                  "key": "key",
+                  "value": "DIGITAL_FIRST_CARD_ORIGINATION"
+                },
+                {
+                  "key": "latestVersion",
+                  "value": "true",
+                  "disabled": true
+                },
+                {
+                  "key": "suspended",
+                  "value": "true",
+                  "disabled": true
+                },
+                {
+                  "key": "tenantIds",
+                  "value": "2fb74cfc-5f4b-4666-80af-3aa47e954721"
+                },
+                {
+                  "key": "versionTag",
+                  "value": "4.0.0",
+                  "disabled": true
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Definition",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{operaton}}/process-definition/:process_definition_id",
+              "host": [
+                "{{operaton}}"
+              ],
+              "path": [
+                "process-definition",
+                ":process_definition_id"
+              ],
+              "variable": [
+                {
+                  "key": "process_definition_id",
+                  "value": "e8bb9e68-75cc-11eb-8fe2-0a58a9feac2a"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Diagram",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "image/jpeg",
+                "type": "text",
+                "disabled": true
+              }
+            ],
+            "url": {
+              "raw": "{{local}}/process-definition/df786f87-3c89-11eb-b2b4-0a58a9feac2a/diagram",
+              "host": [
+                "{{local}}"
+              ],
+              "path": [
+                "process-definition",
+                "df786f87-3c89-11eb-b2b4-0a58a9feac2a",
+                "diagram"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Restart Process",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"instructions\": [\n        {\n            \"type\": \"startBeforeActivity\",\n            \"activityId\": \"SCORING\"\n        }\n    ],\n    \"processInstanceIds\": [\n        \"e892150a-41d1-11eb-8e07-0242ac160003\"\n    ],\n    \"initialVariables\": true,\n    \"skipCustomListeners\": false,\n    \"withoutBusinessKey\": false\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{operaton}}/process-definition/c65213ad-41d1-11eb-b9dd-0242ac160003/restart",
+              "host": [
+                "{{operaton}}"
+              ],
+              "path": [
+                "process-definition",
+                "c65213ad-41d1-11eb-b9dd-0242ac160003",
+                "restart"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "External Task",
+      "item": [
+        {
+          "name": "Get External Task List",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{operaton}}/external-task?activityId=CONFIRM_REJECTION",
+              "host": [
+                "{{operaton}}"
+              ],
+              "path": [
+                "external-task"
+              ],
+              "query": [
+                {
+                  "key": "processInstanceId",
+                  "value": "bb12aae4-137b-11eb-a9e3-0242ac130003",
+                  "disabled": true
+                },
+                {
+                  "key": "activityId",
+                  "value": "CONFIRM_REJECTION"
+                }
+              ]
+            },
+            "description": "Get list of External Tasks using filters: https://docs.operaton.org/reference/latest/rest-api/#tag/External-Task"
+          },
+          "response": []
+        },
+        {
+          "name": "Get External Task",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{local}}/external-task/6381a7dd-0e3c-11eb-aad9-0a58a9feac2a",
+              "host": [
+                "{{local}}"
+              ],
+              "path": [
+                "external-task",
+                "6381a7dd-0e3c-11eb-aad9-0a58a9feac2a"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Fetch and Lock",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"workerId\": 1,\n    \"maxTasks\": 1,\n    \"topics\": [\n        {\n            \"topicName\": \"UPDATE_IDV_DATA\",\n            \"lockDuration\": 100000,\n            \"processVariables\": {\n                \"applicationId\": \"c950a723-f04d-4013-a331-f1d839a29f44\"\n            }\n        }\n    ],\n    \"asyncResponseTimeout\": 5\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{operaton}}/external-task/fetchAndLock",
+              "host": [
+                "{{operaton}}"
+              ],
+              "path": [
+                "external-task",
+                "fetchAndLock"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Complete Task",
+          "protocolProfileBehavior": {
+            "disabledSystemHeaders": {}
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"workerId\": \"1\",\n    \"variables\": {\n        \"result\": {\n            \"value\": \"CONTINUE\"\n        }\n    }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{operaton}}/external-task/:external_task_id/complete",
+              "host": [
+                "{{operaton}}"
+              ],
+              "path": [
+                "external-task",
+                ":external_task_id",
+                "complete"
+              ],
+              "variable": [
+                {
+                  "key": "external_task_id",
+                  "value": "9f185972-7dce-11eb-82ac-0a58a9feac2a"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Fail Task",
+          "protocolProfileBehavior": {
+            "disabledSystemHeaders": {}
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"workerId\": \"1\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{local}}/external-task/bdadf0b6-1370-11eb-a9e3-0242ac130003/failure",
+              "host": [
+                "{{local}}"
+              ],
+              "path": [
+                "external-task",
+                "bdadf0b6-1370-11eb-a9e3-0242ac130003",
+                "failure"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Raise BPMN Error",
+          "protocolProfileBehavior": {
+            "disabledSystemHeaders": {}
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"workerId\": \"1\",\n    \"errorCode\": \"reject\",\n    \"errorMessage\": \"Process is forcefully rejected\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{local}}/external-task/f46496d1-137b-11eb-a9e3-0242ac130003/bpmnError",
+              "host": [
+                "{{local}}"
+              ],
+              "path": [
+                "external-task",
+                "f46496d1-137b-11eb-a9e3-0242ac130003",
+                "bpmnError"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Unlock",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "{{local}}/external-task/4a7ba1db-0d46-11eb-aad9-0a58a9feac2a/unlock",
+              "host": [
+                "{{local}}"
+              ],
+              "path": [
+                "external-task",
+                "4a7ba1db-0d46-11eb-aad9-0a58a9feac2a",
+                "unlock"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update Retry count",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"retries\": 1\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{local}}/external-task/6381a7dd-0e3c-11eb-aad9-0a58a9feac2a/retries",
+              "host": [
+                "{{local}}"
+              ],
+              "path": [
+                "external-task",
+                "6381a7dd-0e3c-11eb-aad9-0a58a9feac2a",
+                "retries"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Error Details",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{local}}/external-task/9a1d8317-0e06-11eb-aad9-0a58a9feac2a/errorDetails",
+              "host": [
+                "{{local}}"
+              ],
+              "path": [
+                "external-task",
+                "9a1d8317-0e06-11eb-aad9-0a58a9feac2a",
+                "errorDetails"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Task",
+      "item": [
+        {
+          "name": "Get Task List (POST)",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"processInstanceId\": \"720cfb29-24d1-11eb-a4c5-0242ac120003\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{local}}/task",
+              "host": [
+                "{{local}}"
+              ],
+              "path": [
+                "task"
+              ],
+              "query": [
+                {
+                  "key": "processDefinitionKey",
+                  "value": "ReviewInvoice",
+                  "disabled": true
+                },
+                {
+                  "key": "processInstanceId",
+                  "value": "135598d3-1f55-11eb-93b6-0a58a9feac2a",
+                  "disabled": true
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Task List",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{local}}/task?processInstanceId=720cfb29-24d1-11eb-a4c5-0242ac120003",
+              "host": [
+                "{{local}}"
+              ],
+              "path": [
+                "task"
+              ],
+              "query": [
+                {
+                  "key": "processInstanceId",
+                  "value": "720cfb29-24d1-11eb-a4c5-0242ac120003"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "History",
+      "item": [
+        {
+          "name": "/history/activity-instance",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{local}}/history/activity-instance",
+              "host": [
+                "{{local}}"
+              ],
+              "path": [
+                "history",
+                "activity-instance"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "/history/task",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{local}}/history/task",
+              "host": [
+                "{{local}}"
+              ],
+              "path": [
+                "history",
+                "task"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get External Task Logs",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{local}}/history/external-task-log?processDefinitionKey=DIGITAL_FIRST_CARD_ORIGINATION&processInstanceId=5b78f813-c1e4-11ea-8bfb-0a58a9feac2a&successLog=true",
+              "host": [
+                "{{local}}"
+              ],
+              "path": [
+                "history",
+                "external-task-log"
+              ],
+              "query": [
+                {
+                  "key": "processDefinitionKey",
+                  "value": "DIGITAL_FIRST_CARD_ORIGINATION"
+                },
+                {
+                  "key": "processInstanceId",
+                  "value": "5b78f813-c1e4-11ea-8bfb-0a58a9feac2a"
+                },
+                {
+                  "key": "topicName",
+                  "value": "CREATE_PLATFORM_USER",
+                  "disabled": true
+                },
+                {
+                  "key": "creationLog",
+                  "value": "true",
+                  "disabled": true
+                },
+                {
+                  "key": "successLog",
+                  "value": "true"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Process Instance",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{operaton}}/history/process-instance/:process_instance_id",
+              "host": [
+                "{{operaton}}"
+              ],
+              "path": [
+                "history",
+                "process-instance",
+                ":process_instance_id"
+              ],
+              "variable": [
+                {
+                  "key": "process_instance_id",
+                  "value": "4d378ab5-1293-11eb-8b06-0a58a9feac2a"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Process Instances List",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{local}}/history/process-instance?processDefinitionKey=DIGITAL_FIRST_CARD_ORIGINATION&finished=true",
+              "host": [
+                "{{local}}"
+              ],
+              "path": [
+                "history",
+                "process-instance"
+              ],
+              "query": [
+                {
+                  "key": "processInstanceId",
+                  "value": "5b78f813-c1e4-11ea-8bfb-0a58a9feac2a",
+                  "disabled": true
+                },
+                {
+                  "key": "processDefinitionKey",
+                  "value": "DIGITAL_FIRST_CARD_ORIGINATION"
+                },
+                {
+                  "key": "variables",
+                  "value": "applicationId_eq_1b934c98-7916-4807-a40e-82291a66b173",
+                  "disabled": true
+                },
+                {
+                  "key": "completed",
+                  "value": "true",
+                  "disabled": true
+                },
+                {
+                  "key": "finished",
+                  "value": "true"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Historic Activity Instances",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{operaton}}/history/activity-instance?processInstanceId=4d378ab5-1293-11eb-8b06-0a58a9feac2a&sortBy=startTime&sortOrder=asc",
+              "host": [
+                "{{operaton}}"
+              ],
+              "path": [
+                "history",
+                "activity-instance"
+              ],
+              "query": [
+                {
+                  "key": "processInstanceId",
+                  "value": "4d378ab5-1293-11eb-8b06-0a58a9feac2a"
+                },
+                {
+                  "key": "sortBy",
+                  "value": "startTime"
+                },
+                {
+                  "key": "sortOrder",
+                  "value": "asc"
+                },
+                {
+                  "key": "finished",
+                  "value": "true",
+                  "disabled": true
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Deployment",
+      "item": [
+        {
+          "name": "GET /deployment",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{local}}/deployment/2279ea0f-0eb0-11eb-aad9-0a58a9feac2a",
+              "host": [
+                "{{local}}"
+              ],
+              "path": [
+                "deployment",
+                "2279ea0f-0eb0-11eb-aad9-0a58a9feac2a"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Process Instance",
+      "item": [
+        {
+          "name": "Get process instance List",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{operaton}}/process-instance?variables=applicationId_eq_6cc7a677-5ae8-45a3-945a-be7bccc77614",
+              "host": [
+                "{{operaton}}"
+              ],
+              "path": [
+                "process-instance"
+              ],
+              "query": [
+                {
+                  "key": "processDefinitionKey",
+                  "value": "DIGITAL_FIRST_CARD_ORIGINATION",
+                  "disabled": true
+                },
+                {
+                  "key": "variables",
+                  "value": "applicationId_eq_6cc7a677-5ae8-45a3-945a-be7bccc77614"
+                },
+                {
+                  "key": "tenantIdIn",
+                  "value": "2fb74cfc-5f4b-4666-80af-3aa47e954721",
+                  "disabled": true
+                },
+                {
+                  "key": "processDefinitionKey",
+                  "value": "BPMN_ERROR_EXAMPLE",
+                  "disabled": true
+                },
+                {
+                  "key": "active",
+                  "value": "false",
+                  "disabled": true
+                },
+                {
+                  "key": "businessKey",
+                  "value": "6ac5a107-0c3a-4b26-927f-d346ad8e1724",
+                  "disabled": true
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Current Activity Instances",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{DEV_CAMUNDA_REST}}/process-instance/65087322-5635-11eb-92c9-0a58a9feac2a/activity-instances",
+              "host": [
+                "{{DEV_CAMUNDA_REST}}"
+              ],
+              "path": [
+                "process-instance",
+                "65087322-5635-11eb-92c9-0a58a9feac2a",
+                "activity-instances"
+              ]
+            },
+            "description": "Get Current Activity Instances"
+          },
+          "response": [
+            {
+              "name": "/process-instance/{id}/activity-instances - Sample success response",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{local}}/process-instance/9cdcdd8c-c06d-11ea-8bfb-0a58a9feac2a/activity-instances",
+                  "host": [
+                    "{{local}}"
+                  ],
+                  "path": [
+                    "process-instance",
+                    "9cdcdd8c-c06d-11ea-8bfb-0a58a9feac2a",
+                    "activity-instances"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Cache-Control",
+                  "value": "no-cache"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked"
+                },
+                {
+                  "key": "Date",
+                  "value": "Wed, 08 Jul 2020 13:18:38 GMT"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=20"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"id\": \"9cdcdd8c-c06d-11ea-8bfb-0a58a9feac2a\",\n    \"parentActivityInstanceId\": null,\n    \"activityId\": \"4e40dc01-a671-11ea-ba6c-0a58a9feac2a\",\n    \"activityType\": \"processDefinition\",\n    \"processInstanceId\": \"9cdcdd8c-c06d-11ea-8bfb-0a58a9feac2a\",\n    \"processDefinitionId\": \"4e40dc01-a671-11ea-ba6c-0a58a9feac2a\",\n    \"childActivityInstances\": [\n        {\n            \"id\": \"CREATE_PLATFORM_ACCOUNT:9d05e966-c06d-11ea-8bfb-0a58a9feac2a\",\n            \"parentActivityInstanceId\": \"9cdcdd8c-c06d-11ea-8bfb-0a58a9feac2a\",\n            \"activityId\": \"CREATE_PLATFORM_ACCOUNT\",\n            \"activityType\": \"serviceTask\",\n            \"processInstanceId\": \"9cdcdd8c-c06d-11ea-8bfb-0a58a9feac2a\",\n            \"processDefinitionId\": \"4e40dc01-a671-11ea-ba6c-0a58a9feac2a\",\n            \"childActivityInstances\": [],\n            \"childTransitionInstances\": [],\n            \"executionIds\": [\n                \"9d05e965-c06d-11ea-8bfb-0a58a9feac2a\"\n            ],\n            \"activityName\": \"Create Platform Account\",\n            \"incidentIds\": [\n                \"d9709bbe-c06f-11ea-8bfb-0a58a9feac2a\"\n            ],\n            \"incidents\": [\n                {\n                    \"id\": \"d9709bbe-c06f-11ea-8bfb-0a58a9feac2a\",\n                    \"activityId\": \"CREATE_PLATFORM_ACCOUNT\"\n                }\n            ],\n            \"name\": \"Create Platform Account\"\n        }\n    ],\n    \"childTransitionInstances\": [],\n    \"executionIds\": [\n        \"9cdcdd8c-c06d-11ea-8bfb-0a58a9feac2a\"\n    ],\n    \"activityName\": \"Digital First Card Origination\",\n    \"incidentIds\": [],\n    \"incidents\": [],\n    \"name\": \"Digital First Card Origination\"\n}"
+            }
+          ]
+        },
+        {
+          "name": "Get Process Instance",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{operaton}}/process-instance/:process_instance_id",
+              "host": [
+                "{{operaton}}"
+              ],
+              "path": [
+                "process-instance",
+                ":process_instance_id"
+              ],
+              "variable": [
+                {
+                  "key": "process_instance_id",
+                  "value": "7454ce5a-7b35-11eb-89e4-0a58a9feac2a"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Get Instance Response Example",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{local}}/process-instance/fa512fed-8fa2-11ea-8743-0242ac110002",
+                  "host": [
+                    "{{local}}"
+                  ],
+                  "path": [
+                    "process-instance",
+                    "fa512fed-8fa2-11ea-8743-0242ac110002"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Cache-Control",
+                  "value": "no-cache"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked"
+                },
+                {
+                  "key": "Date",
+                  "value": "Wed, 06 May 2020 14:13:23 GMT"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=20"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"links\": [],\n    \"id\": \"fa512fed-8fa2-11ea-8743-0242ac110002\",\n    \"definitionId\": \"DIGITAL_CARD_ORIGINATION:2:b32d2bae-8fa1-11ea-8743-0242ac110002\",\n    \"businessKey\": null,\n    \"caseInstanceId\": null,\n    \"ended\": false,\n    \"suspended\": false,\n    \"tenantId\": null\n}"
+            }
+          ]
+        },
+        {
+          "name": "Get Process Instance Variables",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{operaton}}/process-instance/:process_instance_id/variables",
+              "host": [
+                "{{operaton}}"
+              ],
+              "path": [
+                "process-instance",
+                ":process_instance_id",
+                "variables"
+              ],
+              "variable": [
+                {
+                  "key": "process_instance_id",
+                  "value": "e848378e-c39d-11ea-8b06-0a58a9feac2a"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Get Instance Response Example",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{local}}/process-instance/fa512fed-8fa2-11ea-8743-0242ac110002",
+                  "host": [
+                    "{{local}}"
+                  ],
+                  "path": [
+                    "process-instance",
+                    "fa512fed-8fa2-11ea-8743-0242ac110002"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Cache-Control",
+                  "value": "no-cache"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked"
+                },
+                {
+                  "key": "Date",
+                  "value": "Wed, 06 May 2020 14:13:23 GMT"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=20"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"links\": [],\n    \"id\": \"fa512fed-8fa2-11ea-8743-0242ac110002\",\n    \"definitionId\": \"DIGITAL_CARD_ORIGINATION:2:b32d2bae-8fa1-11ea-8743-0242ac110002\",\n    \"businessKey\": null,\n    \"caseInstanceId\": null,\n    \"ended\": false,\n    \"suspended\": false,\n    \"tenantId\": null\n}"
+            }
+          ]
+        },
+        {
+          "name": "Process Modification",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"skipCustomListeners\": true,\n    \"skipIoMappings\": true,\n    \"instructions\": [\n        {\n            \"type\": \"startAfterActivity\",\n            \"activityId\": \"UPDATE_IDV_DATA\"\n        },\n        {\n            \"type\": \"cancel\",\n            \"activityId\": \"UPDATE_IDV_DATA\"\n        }\n    ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{operaton}}/process-instance/:process_instance_id/modification",
+              "host": [
+                "{{operaton}}"
+              ],
+              "path": [
+                "process-instance",
+                ":process_instance_id",
+                "modification"
+              ],
+              "variable": [
+                {
+                  "key": "process_instance_id",
+                  "value": "23d9b0dd-7d40-11eb-9611-1229d6a3a9a3"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Instances (POST)",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"suspended\": true,\n    \"variables\": [\n        {\n            \"name\": \"applicationId\",\n            \"operator\": \"eq\",\n            \"value\": \"2252c14a-0442-48f0-b9a0-c174576f9c28\"\n        }\n    ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{local}}/process-instance",
+              "host": [
+                "{{local}}"
+              ],
+              "path": [
+                "process-instance"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Job Definition",
+      "item": [
+        {
+          "name": "Get job-definition List",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{local}}/job-definition?activityIdIn=UPDATE_PLATFORM_USER",
+              "host": [
+                "{{local}}"
+              ],
+              "path": [
+                "job-definition"
+              ],
+              "query": [
+                {
+                  "key": "activityIdIn",
+                  "value": "UPDATE_PLATFORM_USER"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Execution",
+      "item": [
+        {
+          "name": "GET execution List",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{local}}/execution?processDefinitionKey=DIGITAL_FIRST_CARD_ORIGINATION&variables=applicationId_eq_c82076ec-ad2c-4fff-a1a6-e1a9851499d4",
+              "host": [
+                "{{local}}"
+              ],
+              "path": [
+                "execution"
+              ],
+              "query": [
+                {
+                  "key": "processDefinitionKey",
+                  "value": "DIGITAL_FIRST_CARD_ORIGINATION"
+                },
+                {
+                  "key": "variables",
+                  "value": "applicationId_eq_c82076ec-ad2c-4fff-a1a6-e1a9851499d4"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get execution details",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{local}}/execution/85c6e370-c1ca-11ea-8bfb-0a58a9feac2a",
+              "host": [
+                "{{local}}"
+              ],
+              "path": [
+                "execution",
+                "85c6e370-c1ca-11ea-8bfb-0a58a9feac2a"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Message Event Subscription",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{local}}/execution/88fbd83d-135b-11eb-a9e3-0242ac130003/messageSubscriptions/REJECT_APPLICATION",
+              "host": [
+                "{{local}}"
+              ],
+              "path": [
+                "execution",
+                "88fbd83d-135b-11eb-a9e3-0242ac130003",
+                "messageSubscriptions",
+                "REJECT_APPLICATION"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Incident",
+      "item": [
+        {
+          "name": "Get Incidents",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{local}}/incident?incidentType=failedJob&sortBy=incidentTimestamp&sortOrder=desc",
+              "host": [
+                "{{local}}"
+              ],
+              "path": [
+                "incident"
+              ],
+              "query": [
+                {
+                  "key": "processInstanceId",
+                  "value": "940de962-41f3-11eb-a56e-0242ac160003",
+                  "disabled": true
+                },
+                {
+                  "key": "incidentType",
+                  "value": "failedJob"
+                },
+                {
+                  "key": "sortBy",
+                  "value": "incidentTimestamp"
+                },
+                {
+                  "key": "sortOrder",
+                  "value": "desc"
+                },
+                {
+                  "key": "failedActivityId",
+                  "value": "XPN_CREDIT_PULL",
+                  "disabled": true
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Resolve Incident",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{local}}/incident/017837e2-0bd4-11eb-b2b5-0242ac120003",
+              "host": [
+                "{{local}}"
+              ],
+              "path": [
+                "incident",
+                "017837e2-0bd4-11eb-b2b5-0242ac120003"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Create Incident",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"incidentType\" : \"aType\",\n  \"configuration\" : \"aConfiguration\",\n  \"message\": \"dummy message\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{local}}/execution/363d73b7-136a-11eb-a9e3-0242ac130003/create-incident",
+              "host": [
+                "{{local}}"
+              ],
+              "path": [
+                "execution",
+                "363d73b7-136a-11eb-a9e3-0242ac130003",
+                "create-incident"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Message",
+      "item": [
+        {
+          "name": "/message",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"messageName\": \"ABANDONED_MESSAGE\",\n    \"businessKey\": \"ec35b9a1-9176-4e5f-9124-22ed5e393867\"\n}\n\n",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{operaton}}/message",
+              "host": [
+                "{{operaton}}"
+              ],
+              "path": [
+                "message"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Event Subscription",
+      "item": [
+        {
+          "name": "Get List",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{local}}/event-subscription?eventType=message&sortBy=created&sortOrder=asc",
+              "host": [
+                "{{local}}"
+              ],
+              "path": [
+                "event-subscription"
+              ],
+              "query": [
+                {
+                  "key": "eventType",
+                  "value": "message"
+                },
+                {
+                  "key": "sortBy",
+                  "value": "created"
+                },
+                {
+                  "key": "sortOrder",
+                  "value": "asc"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Job",
+      "item": [
+        {
+          "name": "GET Job List",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{local}}/job?withException=true&firstResult=0&maxResults=50&tenantIdIn=2fb74cfc-5f4b-4666-80af-3aa47e954721&sortBy=jobDueDate&sortOrder=desc",
+              "host": [
+                "{{local}}"
+              ],
+              "path": [
+                "job"
+              ],
+              "query": [
+                {
+                  "key": "processInstanceId",
+                  "value": "1be95e56-4687-11eb-bc2b-0a58a9feac2a",
+                  "disabled": true
+                },
+                {
+                  "key": "withException",
+                  "value": "true"
+                },
+                {
+                  "key": "failedActivityId",
+                  "value": "XPN_CREDIT_PULL",
+                  "disabled": true
+                },
+                {
+                  "key": "firstResult",
+                  "value": "0"
+                },
+                {
+                  "key": "maxResults",
+                  "value": "50"
+                },
+                {
+                  "key": "tenantIdIn",
+                  "value": "2fb74cfc-5f4b-4666-80af-3aa47e954721"
+                },
+                {
+                  "key": "sortBy",
+                  "value": "jobDueDate"
+                },
+                {
+                  "key": "sortOrder",
+                  "value": "desc"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GET Job",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{local}}/job/09cc115d-524d-11eb-aedd-0a58a9feac2a",
+              "host": [
+                "{{local}}"
+              ],
+              "path": [
+                "job",
+                "09cc115d-524d-11eb-aedd-0a58a9feac2a"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update Retries",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"retries\": 1\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{local}}/job/07d4bfc8-3dda-11eb-b2b4-0a58a9feac2a/retries",
+              "host": [
+                "{{local}}"
+              ],
+              "path": [
+                "job",
+                "07d4bfc8-3dda-11eb-b2b4-0a58a9feac2a",
+                "retries"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Process Migration",
+      "item": [
+        {
+          "name": "Generate Migration Plan",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"sourceProcessDefinitionId\": \"c1c5df85-fe5f-11ea-a323-0a58a9feac2a\",\n    \"targetProcessDefinitionId\": \"817cd317-44db-11eb-bc2b-0a58a9feac2a\",\n    \"updateEventTriggers\": true\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{local}}/migration/generate",
+              "host": [
+                "{{local}}"
+              ],
+              "path": [
+                "migration",
+                "generate"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Validate Migration Plan",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"sourceProcessDefinitionId\": \"c1c5df85-fe5f-11ea-a323-0a58a9feac2a\",\n    \"targetProcessDefinitionId\": \"817cd317-44db-11eb-bc2b-0a58a9feac2a\",\n    \"instructions\": [\n        {\n            \"sourceActivityIds\": [\n                \"UPDATE_CAPTURE_DATA\"\n            ],\n            \"targetActivityIds\": [\n                \"UPDATE_CAPTURE_DATA\"\n            ],\n            \"updateEventTrigger\": false\n        }\n    ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{local}}/migration/validate",
+              "host": [
+                "{{local}}"
+              ],
+              "path": [
+                "migration",
+                "validate"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Execute Migration Plan",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"migrationPlan\": {\n        \"sourceProcessDefinitionId\": \"852b8d33-128b-11eb-8b06-0a58a9feac2a\",\n        \"targetProcessDefinitionId\": \"8fa08d2c-75eb-11eb-98cb-0a58a9feac2a\",\n        \"instructions\": [\n            {\n                \"sourceActivityIds\": [\n                    \"XPN_CREDIT_PULL\"\n                ],\n                \"targetActivityIds\": [\n                    \"BUREAU_HARD_PULL\"\n                ],\n                \"updateEventTrigger\": false\n            }\n        ]\n    },\n    \"processInstanceIds\": [\n        \"2118a4f1-3d16-11eb-b94e-0a58a9feac2a\"\n    ],\n    \"skipCustomListeners\": true\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{operaton}}/migration/execute",
+              "host": [
+                "{{operaton}}"
+              ],
+              "path": [
+                "migration",
+                "execute"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ],
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "exec": [
+          ""
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "exec": [
+          ""
+        ]
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "operaton",
+      "value": "http://localhost:8080/engine-rest"
+    },
+    {
+      "key": "tenant_id",
+      "value": "2fb74cfc-5f4b-4666-80af-3aa47e954721"
+    }
+  ]
+}

@@ -1,9 +1,9 @@
 import logging
 from concurrent.futures.thread import ThreadPoolExecutor
 
-from camunda.external_task.external_task import ExternalTask
-from camunda.external_task.external_task_worker import ExternalTaskWorker
-from camunda.utils.log_utils import log_with_context
+from operaton.external_task.external_task import ExternalTask
+from operaton.external_task.external_task_worker import ExternalTaskWorker
+from operaton.utils.log_utils import log_with_context
 
 logger = logging.getLogger(__name__)
 

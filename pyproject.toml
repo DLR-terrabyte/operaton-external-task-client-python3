@@ -8,10 +8,13 @@ version = "1.0.0"
 authors = [
     { name = "Deserve Labs", email="devteam@deserve.com" },
 ]
+maintainers = [
+    { name = "DLR terrabyte team" }
+]
 dependencies = [
     "requests>=2.24.0"
 ]
-description = "Operaton External Task Client for Python 3"
+description = "External Task Client for Operaton BPM engine. Its based on the camunda-external-task-client-python3 and has been adapted to Operaton."
 readme = "README.md"
 requires-python = ">=3.7"
 classifiers = [

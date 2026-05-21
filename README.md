@@ -1,3 +1,6 @@
+> External Task Client for Operaton BPM engine. 
+> Its based on the [camunda-external-task-client-python3](https://github.com/camunda-community-hub/camunda-external-task-client-python3) and has been adapted to Operaton.
+
 # operaton-external-task-client-python3
 
 This repository contains Operaton External Task Client written in Python3.

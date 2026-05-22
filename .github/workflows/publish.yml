@@ -5,30 +5,49 @@ on:
     tags:
       - "v*"    
 
-permissions:
-  id-token: write
-  contents: read
-
 jobs:
-  pypi-publish:
-    name: Upload release to PyPI
+  build:
+    name: Build distribution 📦
     runs-on: ubuntu-latest
-    environment: pypi
-
-    steps:
-    - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683  # v4.2.2
-
+    
+    steps:    
+    - uses: actions/checkout@v6
+      with:
+        persist-credentials: false    
     - name: Set up Python
-      uses: actions/setup-python@8d9ed9ac5c53483de85588cdf95a591a75ab9f55  # v5.5.0
+      uses: actions/setup-python@v6
       with:
-        python-version: "3.x"
-
-    - name: Build package
-      run: |
-        python -m pip install build
-        python -m build
-
-    - name: Publish to PyPI
-      uses: pypa/gh-action-pypi-publish@76f52bc884231f62b9a034ebfe128415bbaabdfc  # v1.12.4
+        python-version: "3.x"    
+    - name: Install pypa/build
+      run: >-
+        python3 -m
+        pip install
+        build
+        --user
+    - name: Build a binary wheel and a source tarball
+      run: python3 -m build    
+    - name: Store the distribution packages
+      uses: actions/upload-artifact@v5
       with:
-        packages-dir: dist
+        name: python-package-distributions
+        path: dist/
+  
+  publish-to-pypi:
+    name: Publish Python 🐍 distribution 📦 to PyPI
+    needs:
+    - build
+    runs-on: ubuntu-latest
+    environment:
+      name: pypi
+      url: https://pypi.org/p/operaton_external_task_client_python3
+    permissions:
+      id-token: write  # IMPORTANT: mandatory for trusted publishing
+    
+    steps:
+    - name: Download all the dists
+      uses: actions/download-artifact@v6
+      with:
+        name: python-package-distributions
+        path: dist/
+    - name: Publish distribution 📦 to PyPI
+      uses: pypa/gh-action-pypi-publish@release/v1       

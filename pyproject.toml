@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "operaton_external_task_client_python3"
-version = "1.0.0"
+version = "1.0.1"
 authors = [
     { name = "Deserve Labs", email="devteam@deserve.com" },
     { name = "DLR terrabyte", email="terrabyte@dlr.de" }

@@ -15,7 +15,7 @@ maintainers = [
 dependencies = [
     "requests>=2.24.0"
 ]
-description = "External Task Client for Operaton BPMN engine. Its based on the camunda-external-task-client-python3 and has been adapted to Operaton."
+description = "External Task Client for Operaton BPMN engine"
 readme = "README.md"
 requires-python = ">=3.7"
 classifiers = [

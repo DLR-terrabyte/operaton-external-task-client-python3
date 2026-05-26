@@ -2,7 +2,10 @@
 
 This repo is an evolution of https://github.com/camunda-community-hub/camunda-external-task-client-python3.
 
-It has been adapted for the use with the [Operaton](https://operaton.org/) BPMN engine.
+The following changes have been made in the original implementation:
+- renamed Camunda to Operation for the use with the [Operaton](https://operaton.org/) BPMN engine
+- added a function to retrieve the history of a process instance
+
 
 ## Introduction
 

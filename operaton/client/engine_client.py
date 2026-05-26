@@ -178,3 +178,10 @@ class EngineClient:
         if with_meta:
             return dict(resp_json, value=decoded_value)
         return decoded_value
+
+    def get_process_instance_history(self, process_instance_id):
+        url = f"{self.engine_base_url}/history/process-instance/{process_instance_id}"
+        response = requests.get(url, headers=self._get_headers())
+        raise_exception_if_not_ok(response)
+        resp_json = response.json()
+        return resp_json

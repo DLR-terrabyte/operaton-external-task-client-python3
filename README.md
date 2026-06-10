@@ -5,6 +5,7 @@ This repo is an evolution of https://github.com/camunda-community-hub/camunda-ex
 The following changes have been made in the original implementation:
 - renamed Camunda to Operation for the use with the [Operaton](https://operaton.org/) BPMN engine
 - added a function to retrieve the history of a process instance
+- extended the ExternalTaskWorker to optionally stop the thread with a `threading.Event()`
 
 
 ## Introduction

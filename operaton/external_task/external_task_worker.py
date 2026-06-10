@@ -11,17 +11,22 @@ from operaton.utils.utils import get_exception_detail
 class ExternalTaskWorker:
     DEFAULT_SLEEP_SECONDS = 300
 
-    def __init__(self, worker_id, base_url=ENGINE_LOCAL_BASE_URL, config=None):
+    def __init__(self, worker_id, base_url=ENGINE_LOCAL_BASE_URL, config=None, stop_event=None):
         config = config if config is not None else {}  # To avoid to have a mutable default for a parameter
         self.worker_id = worker_id
         self.client = ExternalTaskClient(self.worker_id, base_url, config)
         self.executor = ExternalTaskExecutor(self.worker_id, self.client)
         self.config = config
+        self.stop_event = stop_event
         self._log_with_context(f"Created new External Task Worker with config: {obfuscate_password(self.config)}")
 
     def subscribe(self, topic_names, action, process_variables=None, variables=None):
-        while True:
-            self._fetch_and_execute_safe(topic_names, action, process_variables, variables)
+        if self.stop_event is not None:
+            while not self.stop_event.is_set():
+                self._fetch_and_execute_safe(topic_names, action, process_variables, variables)
+        else:        
+            while True:
+                self._fetch_and_execute_safe(topic_names, action, process_variables, variables)
 
         self._log_with_context("Stopping worker")  # Fixme: This code seems to be unreachable?
 

@@ -104,3 +104,12 @@ class ExternalTaskTest(TestCase):
     def test_str(self):
         task = ExternalTask(context={"variables": {"var_name": {"value": 1}}})
         self.assertEqual("{'variables': {'var_name': {'value': 1}}}", str(task))
+
+    def test_external_task_creation_with_config(self):
+        config = {"maxTasks": 1, "isDebug": True}
+        task = ExternalTask(context={}, config=config)
+        self.assertEqual(config, task.get_config())
+
+    def test_external_task_creation_without_config_defaults_to_none(self):
+        task = ExternalTask(context={})
+        self.assertIsNone(task.get_config())

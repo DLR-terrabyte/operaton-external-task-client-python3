@@ -64,7 +64,7 @@ class ExternalTaskWorker:
         tasks = []
         if resp_json:
             for context in resp_json:
-                task = ExternalTask(context)
+                task = ExternalTask(context, self.config)
                 tasks.append(task)
 
         tasks_count = len(tasks)

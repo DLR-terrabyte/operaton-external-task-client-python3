@@ -3,11 +3,15 @@ from operaton.variables.variables import Variables
 
 
 class ExternalTask:
-    def __init__(self, context):
+    def __init__(self, context, config=None):
         self._context = context
+        self._config = config
         self._variables = Variables(context.get("variables", {}))
         self._task_result = TaskResult.empty_task_result(task=self)
         self._extProperties = Properties(context.get("extensionProperties", {}))
+
+    def get_config(self):
+        return self._config
 
     def get_worker_id(self):
         return self._context["workerId"]

@@ -7,7 +7,7 @@ DEFAULT_SENSITIVE_KEYS = {
     "access_token", "refresh_token", "api_key", "private_key",
 }
 
-def obfuscate_secrets(config: dict, sensitive_keys: set = None, extra_key: str = None) -> dict:
+def obfuscate_password(config: dict, sensitive_keys: set = None, extra_key: str = None) -> dict:
     """Obfuscate password value in config
     :param config:  config from ExternalTaskWorker or ExternalTaskClient
     :param sensitive_keys: optional custom list, replaces DEFAULT_SENSITIVE_KEYS

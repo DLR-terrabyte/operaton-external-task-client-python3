@@ -113,3 +113,12 @@ class ExternalTaskTest(TestCase):
     def test_external_task_creation_without_config_defaults_to_none(self):
         task = ExternalTask(context={})
         self.assertIsNone(task.get_config())
+
+    def test_failure_forwards_global_variables_to_task_result(self):
+        task = ExternalTask({"id": "1", "topicName": "my_topic"})
+        task_result = task.failure(
+            error_message="failed", error_details="details",
+            max_retries=3, retry_timeout=1000,
+            global_variables={"var1": 1},
+        )
+        self.assertEqual({"var1": 1}, task_result.global_variables)

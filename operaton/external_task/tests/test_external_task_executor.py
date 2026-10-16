@@ -1,5 +1,6 @@
 import base64
 import collections
+import json
 from http import HTTPStatus
 from unittest import TestCase
 
@@ -60,6 +61,29 @@ class ExternalTaskExecutorTest(TestCase):
 
         actual_task_result = executor.execute_task(task, self.task_failure_action)
         self.assertEqual(str(expected_task_result), str(actual_task_result))
+
+    @responses.activate
+    def test_task_failure_end_to_end_with_global_variables(self):
+        task = ExternalTask({"id": "1", "topicName": "my_topic"})
+
+        def handler(t):
+            return t.failure(
+                error_message="unknown task failure", error_details="unknown error",
+                max_retries=3, retry_timeout=30000, global_variables={"var1": 1},
+            )
+
+        external_task_client = ExternalTaskClient(worker_id=1)
+        responses.add(
+            responses.POST,
+            external_task_client.get_task_failure_url(task.get_task_id()),
+            status=HTTPStatus.NO_CONTENT,
+        )
+        executor = ExternalTaskExecutor(worker_id=1, external_task_client=external_task_client)
+
+        executor.execute_task(task, handler)
+
+        sent_body = json.loads(responses.calls[0].request.body)
+        self.assertEqual({"value": 1}, sent_body["variables"]["var1"])
 
     @staticmethod
     def task_bpmn_error_action(task):

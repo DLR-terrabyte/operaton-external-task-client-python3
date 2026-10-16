@@ -3,11 +3,15 @@ from operaton.variables.variables import Variables
 
 
 class ExternalTask:
-    def __init__(self, context):
+    def __init__(self, context, config=None):
         self._context = context
+        self._config = config
         self._variables = Variables(context.get("variables", {}))
         self._task_result = TaskResult.empty_task_result(task=self)
         self._extProperties = Properties(context.get("extensionProperties", {}))
+
+    def get_config(self):
+        return self._config
 
     def get_worker_id(self):
         return self._context["workerId"]
@@ -52,7 +56,7 @@ class ExternalTask:
         self._task_result = TaskResult.success(self, global_variables, local_variables)
         return self._task_result
 
-    def failure(self, error_message, error_details, max_retries, retry_timeout):
+    def failure(self, error_message, error_details, max_retries, retry_timeout, global_variables=None):
         retries = self._calculate_retries(max_retries)
         self._task_result = TaskResult.failure(
             self,
@@ -60,6 +64,7 @@ class ExternalTask:
             error_details=error_details,
             retries=retries,
             retry_timeout=retry_timeout,
+            global_variables=global_variables,
         )
         return self._task_result
 
@@ -114,7 +119,7 @@ class TaskResult:
         )
 
     @classmethod
-    def failure(cls, task, error_message, error_details, retries, retry_timeout):
+    def failure(cls, task, error_message, error_details, retries, retry_timeout, global_variables=None):
         return TaskResult(
             task,
             success=False,
@@ -122,6 +127,7 @@ class TaskResult:
             error_details=error_details,
             retries=retries,
             retry_timeout=retry_timeout,
+            global_variables=global_variables,
         )
 
     @classmethod

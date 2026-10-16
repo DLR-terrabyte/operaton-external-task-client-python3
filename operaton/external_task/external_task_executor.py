@@ -64,7 +64,7 @@ class ExternalTaskExecutor:
     def _handle_task_failure(self, task_id, task_result, topic):
         self._log_with_context(f"Marking task failed - Topic: {topic} task_result: {task_result}", task_id)
         if self.external_task_client.failure(task_id, task_result.error_message, task_result.error_details,
-                                             task_result.retries, task_result.retry_timeout):
+                                             task_result.retries, task_result.retry_timeout, task_result.global_variables):
             self._log_with_context(f"Marked task failed - Topic: {topic} task_result: {task_result}", task_id)
         else:
             self._log_with_context(f"Not able to mark task failure - Topic: {topic}", task_id=task_id)

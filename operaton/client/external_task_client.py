@@ -98,7 +98,7 @@ class ExternalTaskClient:
     def get_task_complete_url(self, task_id):
         return f"{self.external_task_base_url}/{task_id}/complete"
 
-    def failure(self, task_id, error_message, error_details, retries, retry_timeout, global_variables):
+    def failure(self, task_id, error_message, error_details, retries, retry_timeout, global_variables=None):
         url = self.get_task_failure_url(task_id)
         logger.info(f"setting retries to: {retries} for task: {task_id}")
         body = {
